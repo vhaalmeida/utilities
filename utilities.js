@@ -51,7 +51,7 @@ var utilities = {
 			
 		}
 		,
-		//Coloca a Ref do nome de cada produto de uma prateleira emtre span
+		//Coloca a Ref do nome de cada produto de uma prateleira entre span
 		splitPrateleiraRef: function(){
 			if($('.prateleira li[layout]:not(".ajax-formated")').length > 0){
 				$('.prateleira li[layout]:not(".ajax-formated")').each(function(){
