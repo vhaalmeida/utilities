@@ -51,17 +51,20 @@ var utilities = {
 			
 		}
 		,
-		//Coloca a Ref do nome de cada produto de uma prateleira entre span
+		//Coloca a Ref do nome de cada produto de uma prateleira emtre span
 		splitPrateleiraRef: function(){
 			if($('.prateleira li[layout]:not(".ajax-formated")').length > 0){
 				$('.prateleira li[layout]:not(".ajax-formated")').each(function(){
-					var productName = $(this).find('h3 a').html();
-					if(productName.indexOf('Ref.') != -1)
-					{
-						var productNameSplited = productName.split('Ref.');
-						$(this).find('h3 a').html('<span class="name">'+productNameSplited[0]+'</span><span class="ref">Ref. '+productNameSplited[1]+'</span>');
+					if($(this).find('h3 a').length){
+						var productName = $(this).find('h3 a').html();
+						if(productName.indexOf('Ref.') != -1)
+						{
+							var productNameSplited = productName.split('Ref.');
+							$(this).find('h3 a').html('<span class="name">'+productNameSplited[0]+'</span><span class="ref">Ref. '+productNameSplited[1]+'</span>');
+						}
+						$(this).addClass('ajax-formated');
 					}
-					$(this).addClass('ajax-formated');
+					
 			   });
 			}
 			
